@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Calculator</title>
+  <h1>Calculator</h1>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    
+    }
+    .calculator {
+      width: 300px;
+      border-radius: 8px;
+      padding: 20px;
+      
+    }
+    .display {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      text-align: right;
+     
+    }
+    .buttons {
+      display: grid;
+      gap: 10px;
+    }
+    .button {
+      padding: 20px;
+      color: white;
+      background-color:green;
+      border-radius: 5px;
+      
+    }
+    .button:hover {
+      background-color: red;
+    }
+    .button.clear {
+      background-color: red;
+    }
+    .button.equal {
+      background-color: green;
+      grid-column: span 4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="display" class="display" >
+    <div class="buttons">
+      <button class="button" onclick="clickNumber('1')">1</button>
+      <button class="button" onclick="clickNumber('2')">2</button>
+      <button class="button" onclick="clickNumber('3')">3</button>
+      <button class="button" onclick="clickNumber('/')">/</button>
+      
+      <button class="button" onclick="clickNumber('4')">4</button>
+      <button class="button" onclick="clickNumber('5')">5</button>
+      <button class="button" onclick="clickNumber('6')">6</button>
+      <button class="button" onclick="clickNumber('')"></button>
+      
+      <button class="button" onclick="clickNumber('7')">7</button>
+      <button class="button" onclick="clickNumber('8')">8</button>
+      <button class="button" onclick="clickNumber('9')">9</button>
+      <button class="button" onclick="clickNumber('-')">-</button>
+      
+      <button class="button" onclick="clickNumber('0')">0</button>
+      <button class="button" onclick="clickNumber('.')">.</button>
+      <button class="button" onclick="clickNumber('+')">+</button>
+      
+      <button class="button clear" onclick="clearDisplay()">C</button>
+      <button class="button equal" onclick="calculate()">=</button>
+      
+    </div>
+  </div>
+
+  <script>
+    let display = document.getElementById('display');
+
+    function clickNumber(number) {
+      display.value += number;
+    }
+
+   
+
+    function clearDisplay() {
+      display.value = '';
+    }
+
+    function calculate() {
+      
+        var result = eval(display.value)
+      
+        display.value = result;
+      }
+    
+  </script>
+
+
+
+
+
+
+
+<head>
+  
+  <title>RGB  Mixer</title>
+  <h1>RGB COLOR MIXER</h1>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .color-box {
+      width: 80%;
+      height: 100px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+     
+    }
+    .slider-container {
+      display: flex;
+     
+      width: 80%;
+    }
+    .slider-wrapper {
+      text-align: center;
+    }
+    .slider {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="colorBox" class="color-box">rgb(255, 0, 0)</div>
+  
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <label for="red">RED</label><br>
+      <input type="range" id="red" class="slider" min="0" max="255" value="255" oninput="updateColor()">
+      
+    </div>
+    <div class="slider-wrapper">
+      <label for="green">GREEN</label><br>
+      <input type="range" id="green" class="slider" min="0" max="255" value="0" oninput="updateColor()">
+    
+    </div>
+    <div class="slider-wrapper">
+      <label for="blue">BLUE</label><br>
+      <input type="range" id="blue" class="slider" min="0" max="255" value="0" oninput="updateColor()">
+     
+    </div>
+  </div>
+
+  <script>
+    function updateColor() {
+      
+       red = document.getElementById("red").value;
+       green = document.getElementById("green").value;
+       blue = document.getElementById("blue").value;
+
+      
+       rgbColor = RGB(${red}, ${green}, ${blue});
+      document.getElementById("colorBox").style.backgroundColor = rgbColor;
+      document.getElementById("colorBox").textContent = rgbColor;
+
+      
+      document.getElementById("redValue").textContent = red;
+      document.getElementById("greenValue").textContent = green;
+      document.getElementById("blueValue").textContent = blue;
+    }
+  </script>
+
+
+
+
+</body>
+</html>
